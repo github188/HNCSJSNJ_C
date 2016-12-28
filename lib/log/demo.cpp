@@ -4,6 +4,6 @@
 
 int main(int argc, char** argv)
 {
-	LogD("Hello World!");
+	LogD("Hello World!\n");
 	return 0;
 }

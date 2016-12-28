@@ -66,5 +66,5 @@ void CLog::Log(LOG_LEVEL level, const char *strFileName, int nLine,
 	vsprintf(strInfo, strFormat, arg_ptr);
 	char strOutPut[512] = { 0 };
 	sprintf(strOutPut, "[%s::%d] %s", strFileName, nLine, strInfo);
-	printf("%s\n", strOutPut);
+	printf("%s", strOutPut);
 }
