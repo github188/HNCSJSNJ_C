@@ -324,7 +324,7 @@ int main( int argc, char *argv[], char *env[] )
   }
 
   if ( i == 3 ) {
-    Log2File( logfile, "can not sync rtc time!\n" );
+    //Log2File( logfile, "can not sync rtc time!\n" );
   }
 
 #ifdef MEASURE_CALIBRATION
@@ -333,7 +333,7 @@ int main( int argc, char *argv[], char *env[] )
 
   progs.Run();
 
-  Log2File( logfile, "system boot succeeded!\n" );
+  //Log2File( logfile, "system boot succeeded!\n" );
 
   //  boottime = time( NULL );
 
@@ -346,7 +346,7 @@ int main( int argc, char *argv[], char *env[] )
     progs.Watch(); 
 
     if ( progs.isreboot ) {
-      Log2File( logfile, "program crash, system must be reboot!\n" );
+     // Log2File( logfile, "program crash, system must be reboot!\n" );
       // to reboot system
       for( i = 0; i < 30; i ++ ) {
 	sleep(1);
@@ -374,7 +374,7 @@ int main( int argc, char *argv[], char *env[] )
 	  
 	  fscanf( fp, "%lf", &boottime );
 	  if ( boottime > rebootinterval ) {
-	    Log2File( logfile, "reboot time reached, system must be reboot!\n" );
+	   // Log2File( logfile, "reboot time reached, system must be reboot!\n" );
 		
 		reboot_seconds = GetRebootSeconds();
 	    isreboot = true;	    
@@ -407,7 +407,7 @@ void InitDaemon (void)
   ret = fork ();
 
   if (ret < 0) {
-    Log2File( logfile, "InitDaemon() fork failed!" );
+   // Log2File( logfile, "InitDaemon() fork failed!" );
     exit (1);
   }
   else if (ret != 0) 
@@ -417,7 +417,7 @@ void InitDaemon (void)
   //  sleep( 600 );
   ret = setsid ();
   if (ret < 0) {
-    Log2File( logfile, "InitDaemon() setsid failed!" );
+   // Log2File( logfile, "InitDaemon() setsid failed!" );
     exit (1);
   }
 
@@ -434,7 +434,7 @@ void InitDaemon (void)
   ret = fork ();
 
   if (ret < 0) {
-    Log2File( logfile, "InitDaemon() fork failed!" );
+   // Log2File( logfile, "InitDaemon() fork failed!" );
     exit (1);
   }
   else if (ret != 0)
